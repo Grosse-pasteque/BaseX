@@ -1,11 +1,12 @@
-import BaseX as b
+import BaseX
+
 config = {
-    0: [64, 2],
-    1: [32, 3]
+    2: 64,
+    3: 32
 }
 
-EnD = b.B_EnD("ascii", config)
+encrypted = BaseX.encrypt(b"hello", config)
+decrypted = BaseX.decrypt(encrypted, config)
 
-val = EnD.encode("hello")
-print(val)
-print(EnD.decode(val))
+print(encrypted)
+print(decrypted)
